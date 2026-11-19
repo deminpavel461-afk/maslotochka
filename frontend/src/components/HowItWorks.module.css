@@ -1,0 +1,175 @@
+.section {
+  padding: var(--section-pad-y, 4rem) 1.25rem;
+}
+
+@media (max-width: 359px) {
+  .section {
+    padding-inline: 0.85rem;
+  }
+}
+
+.inner {
+  max-width: var(--content-width);
+  margin-inline: auto;
+}
+
+.inner h2 {
+  margin: 0 0 2.25rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 3rem;
+}
+
+.marker {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  flex-shrink: 0;
+  color: var(--color-ink);
+  background: var(--color-accent);
+  border-radius: 50%;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  line-height: 0;
+}
+
+.line {
+  flex: 1;
+  width: 2px;
+  min-height: 1.5rem;
+  margin-block: 0.35rem;
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent),
+    color-mix(in srgb, var(--color-accent) 25%, var(--color-line))
+  );
+}
+
+.body {
+  padding-bottom: 2rem;
+}
+
+.step:last-child .body {
+  padding-bottom: 0;
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.85rem;
+  margin-bottom: 0.35rem;
+}
+
+.number {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+.time {
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+  background: rgb(224 165 26 / 0.14);
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+}
+
+.stepTitle {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.text {
+  margin: 0;
+  max-width: 36rem;
+  color: var(--color-ink-muted);
+  line-height: 1.55;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding-block: var(--section-pad-y, 4rem);
+  }
+
+  .step {
+    gap: 1.25rem 1.5rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .section {
+    padding-block: 5rem;
+  }
+
+  .timeline {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.75rem;
+  }
+
+  .step {
+    grid-template-columns: 1fr;
+    position: relative;
+  }
+
+  .rail {
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .line {
+    width: auto;
+    height: 2px;
+    min-height: 0;
+    flex: 1;
+    margin-block: 0;
+    margin-inline: 0.35rem;
+    background: linear-gradient(
+      to right,
+      var(--color-accent),
+      color-mix(in srgb, var(--color-accent) 25%, var(--color-line))
+    );
+  }
+
+  .step:last-child .line {
+    display: none;
+  }
+
+  .body {
+    padding-bottom: 0;
+  }
+}

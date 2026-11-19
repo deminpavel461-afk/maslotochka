@@ -1,0 +1,10 @@
+node_modules/
+/public/
+!/public/.gitkeep
+backend/bookings.db
+backend/bookings-acceptance.db
+backend/.env
+.DS_Store
+*.local
+*.db
+

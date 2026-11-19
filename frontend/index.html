@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Маслоточка — замена масла в Санкт-Петербурге</title>
+    <meta
+      name="description"
+      content="Замена масла за 30 минут в Санкт-Петербурге. Castrol, Mobil, Shell, Liqui Moly. Бесплатная диагностика ходовой в подарок. Запись онлайн."
+    />
+    <meta name="theme-color" content="#12171d" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon.webp" type="image/webp" />
+    <link rel="apple-touch-icon" href="/og.webp" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="ru_RU" />
+    <meta property="og:site_name" content="Маслоточка" />
+    <meta property="og:title" content="Маслоточка — замена масла в Санкт-Петербурге" />
+    <meta
+      property="og:description"
+      content="Замена масла за 30 минут рядом с вами. Бесплатная диагностика ходовой в подарок."
+    />
+    <meta property="og:image" content="/og.webp" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Маслоточка — замена масла в Санкт-Петербурге" />
+    <meta
+      name="twitter:description"
+      content="Замена масла за 30 минут рядом с вами. Бесплатная диагностика ходовой в подарок."
+    />
+    <meta name="twitter:image" content="/og.webp" />
+    <style>
+      .nojs-booking {
+        max-width: 36rem;
+        margin: 2rem auto;
+        padding: 0 1.25rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      .nojs-booking label {
+        display: block;
+        margin: 0.75rem 0 0.25rem;
+        font-weight: 600;
+      }
+      .nojs-booking input,
+      .nojs-booking textarea {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.6rem 0.75rem;
+      }
+      .nojs-booking .consent {
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        margin: 1rem 0;
+        font-weight: 400;
+      }
+      .nojs-booking .consent input {
+        width: auto;
+        margin-top: 0.25rem;
+      }
+      .nojs-booking .hp {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+      .nojs-booking button {
+        margin-top: 0.5rem;
+        padding: 0.75rem 1.25rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <!-- Fallback без JS: React заменит содержимое #root при загрузке -->
+      <section class="nojs-booking" id="booking" aria-labelledby="nojs-booking-title">
+        <h1>Маслоточка</h1>
+        <h2 id="nojs-booking-title">Запись онлайн</h2>
+        <p>Или позвоните: <a href="tel:+78120000000">+7 (812) XXX-XX-XX</a></p>
+        <form method="post" action="/api/booking" accept-charset="UTF-8">
+          <div class="hp" aria-hidden="true">
+            <label for="website">Сайт</label>
+            <input id="website" type="text" name="website" tabindex="-1" autocomplete="off" />
+          </div>
+          <label for="name">Имя</label>
+          <input id="name" name="name" type="text" required minlength="2" autocomplete="name" />
+          <label for="phone">Телефон</label>
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            required
+            placeholder="+7XXXXXXXXXX"
+            pattern="^\+7\d{10}$"
+            title="Формат: +7 и 10 цифр"
+            autocomplete="tel"
+          />
+          <label for="car">Марка и модель авто</label>
+          <input id="car" name="car" type="text" required />
+          <label for="datetime">Желаемые дата и время</label>
+          <input id="datetime" name="datetime" type="datetime-local" required />
+          <label for="comment">Комментарий (необязательно)</label>
+          <textarea id="comment" name="comment" rows="3"></textarea>
+          <label class="consent">
+            <input type="checkbox" name="consent" value="1" required />
+            <span>Согласие на обработку <a href="/privacy.html">персональных данных</a></span>
+          </label>
+          <button type="submit">Отправить заявку</button>
+        </form>
+      </section>
+    </div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
